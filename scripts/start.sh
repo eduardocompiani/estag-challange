@@ -6,7 +6,7 @@ pushd $(dirname $0) > /dev/null
 
 cd ..
 docker compose down
-docker compose up -d --force-recreate
+docker compose up --force-recreate
 
 # Return to the previous directory
 popd > /dev/null

@@ -13,13 +13,13 @@ services:
       - POSTGRES_DB=applicationphp
   php:
     container_name: php_desafio
-    build: .
+    build: ./back
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./src:/var/www/html
-      - ./logs:/var/log/apache2
+      - ./back/src:/var/www/html
+      - ./back/logs:/var/log/apache2
     links:
       - db
   pgadmin:
@@ -35,3 +35,13 @@ services:
       - ./database/server.json:/pgadmin4/servers.json
     links:
       - db
+  node:
+    container_name: node_desafio
+    build: ./front
+    ports:
+      - "5173:5173"
+    working_dir: /app
+    volumes:
+      - ./front:/app
+    command: 'npm run dev'
+
