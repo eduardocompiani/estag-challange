@@ -4,9 +4,9 @@ set -e
 # Change the current directory to the script directory
 pushd $(dirname $0) > /dev/null
 
-cd ..
-docker compose down
-docker compose up -d --force-recreate
+ID=$(docker inspect --format="{{.Id}}" node_desafio)
+
+docker exec -it $ID bash -c "npm install $1 --save-dev";
 
 # Return to the previous directory
 popd > /dev/null
