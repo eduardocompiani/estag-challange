@@ -1,0 +1,13 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "pgsql_desafio",
+            "Group": "Servers",
+            "Port": 5432,
+            "Username": "root",
+            "Host": "pgsql_desafio",
+            "SSLMode": "prefer",
+            "MaintenanceDB": "postgres"
+        }
+    }
+}
