@@ -4,7 +4,6 @@
     $db = "applicationphp";
     $user = "root";
     $pw = "root";
-    
-    $myPDO = new PDO("pgsql:host=$host;dbname=$db", $user, $pw);
 
+    define('myPDO', new PDO("pgsql:host=$host;dbname=$db", $user, $pw));
 ?>
