@@ -39,9 +39,8 @@ services:
     container_name: node_desafio
     build: ./front
     ports:
-      - "5173:5173"
+      - "3000:3000"
     working_dir: /app
     volumes:
       - ./front:/app
-    command: 'npm run dev'
 
